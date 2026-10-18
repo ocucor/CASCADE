@@ -39,6 +39,8 @@ presses only on the physics tick right after them; a press landing on a tick the
 (e.g. the tick of a slide jump) or two presses between two ticks (scroll-wheel binds) used to
 vanish. Off = vanilla.
 
+<sub>I feel like it's obligatory to state that this is inspired by CBF from Geometry Dash :3 </sub>
+
 **FAST MENUS** - OFF / 1.5X / 2X / 3X. Speeds up menu transitions: main menu, pause, options,
 death and results screens. Background video, looping menu animations, the HUD and gameplay keep
 their normal speed.
@@ -125,8 +127,8 @@ CHANGED (red). The theater shows a warning banner for anything that isn't VERIFI
 - Every tick is checked against the game's physics (movement vs velocity, teleports, impossible
   speeds, camera leaving the body, length vs time). Anomalies: SUSPICIOUS.
 
-This is tamper evidence, not proof: everything runs on players' PCs, so a determined cheater can
-still forge a run. Do not treat a ghost as a verified world record.
+Note: This is tamper evidence, not proof. Everything runs on players' PCs, so a determined cheater can
+still forge a run. Do not treat a ghost as a verified record.
 
 `.cghost` files are plain data (a JSON header and fixed binary records), checked field by field
 on import. They can't contain code, unlike the game's own `.res` ghost files.
@@ -134,7 +136,7 @@ on import. They can't contain code, unlike the game's own `.res` ghost files.
 ## Showcase ghost
 
 `showcase/lvl_1_2_showcase_40500.cghost`: SPHERE 1-2 MANDALA, 00:40.500. Converted from the
-game's own PB ghost. Positions are as precise as the game's compressed ghost; camera, velocity,
+game's own PB ghost by yours truly. Positions are as precise as the game's compressed ghost; camera, velocity,
 dashes, cores and kills are reconstructed, so it is marked SHOWCASE, not VERIFIED. It was never
 submitted to any leaderboard. Drag it onto the game window to import it.
 
