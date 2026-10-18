@@ -2,7 +2,7 @@
   <img src="logo.png" width="240" alt="">
 </p>
 
-# CICADAMATA QOL
+# CASCADE
 
 Quality-of-life mod for CICADAMATA" (full game): input fixes, HUD customization, and a ghost
 theater for recording, sharing and studying runs.
