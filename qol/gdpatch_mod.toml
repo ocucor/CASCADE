@@ -1,0 +1,12 @@
+id = "qol"
+
+[meta]
+name = "CICADAMATA QOL"
+version = "1.1"
+description = "Input fixes (no dropped presses, optional buffer) and HUD customization: colors, portraits, timers, FPS meter. Settings: Options > MODS."
+
+[config.timer.tick_accurate]
+name = "Tick-exact times"
+description = "Show times from whole physics ticks (fixes 00:00.999 style displays). Mirrors the in-game TICK-EXACT TIMES toggle; applies on next launch."
+type = "boolean"
+default = true
