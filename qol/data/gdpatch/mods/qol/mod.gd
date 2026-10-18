@@ -41,6 +41,8 @@ const DEFAULTS = {
 	"timer_color": GAME_TIMER_COLOR,
 	"timer_scale": 1.0,
 	"timer_pb": false,
+	"hide_hud": false,
+	"hide_cross": false,
 	"hud_opacity": 1.0,
 	"hud_scale": 1.0,
 	"hud_tint": Color(1, 1, 1),
@@ -291,6 +293,7 @@ func _page_input_timer(api) -> void:
 
 func _page_hud(api) -> void:
 	api.header("HUD")
+	api.toggle("HIDE HUD", "Hide the whole in-game HUD.", s.hide_hud, _opt("hide_hud"))
 	api.slider("HUD OPACITY", "Set opacity of in-game HUD.", 0.1, 1.0, 0.05, s.hud_opacity, _opt("hud_opacity"))
 	api.slider("HUD SIZE", "Set size of in-game HUD.", 0.6, 1.2, 0.05, s.hud_scale, _opt("hud_scale"))
 	api.color("HUD TINT", "Set color tint of in-game HUD.", s.hud_tint, _opt("hud_tint"))
@@ -298,6 +301,7 @@ func _page_hud(api) -> void:
 	api.color("INPUT OVERLAY OFF", "Set color of released buttons on input overlay.", s.overlay_off, _opt("overlay_off"))
 	api.column_break()
 	api.header("CROSSHAIR")
+	api.toggle("HIDE CROSSHAIR", "Hide the in-game crosshair.", s.hide_cross, _opt("hide_cross"))
 	api.color("CROSSHAIR COLOR", "Set color of in-game crosshair.", s.cross_color, _opt("cross_color"))
 	api.slider("CROSSHAIR SIZE", "Set size of in-game crosshair.", 0.5, 2.0, 0.05, s.cross_scale, _opt("cross_scale"))
 	api.slider("CROSSHAIR OPACITY", "Set opacity of in-game crosshair.", 0.1, 1.0, 0.05, s.cross_opacity, _opt("cross_opacity"))
@@ -464,7 +468,7 @@ func _process(delta: float) -> void:
 
 func _apply_hud(ui) -> void:
 	var hud: CanvasItem = ui._ui
-	hud.modulate = Color(s.hud_tint.r, s.hud_tint.g, s.hud_tint.b, _scaled_alpha(hud, s.hud_opacity))
+	hud.modulate = Color(s.hud_tint.r, s.hud_tint.g, s.hud_tint.b, _scaled_alpha(hud, 0.0 if s.hide_hud else s.hud_opacity))
 	if hud is Control:
 		var sc = Vector2(s.hud_scale, s.hud_scale)
 		if hud.scale != sc:
@@ -475,7 +479,7 @@ func _apply_hud(ui) -> void:
 func _apply_crosshair(ui) -> void:
 	var cross = ui.get("_crosshair")
 	if cross is CanvasItem:
-		cross.modulate = Color(s.cross_color.r, s.cross_color.g, s.cross_color.b, _scaled_alpha(cross, s.cross_opacity))
+		cross.modulate = Color(s.cross_color.r, s.cross_color.g, s.cross_color.b, _scaled_alpha(cross, 0.0 if s.hide_cross else s.cross_opacity))
 		if cross is Control:
 			var sc = Vector2(s.cross_scale, s.cross_scale)
 			if cross.scale != sc:

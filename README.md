@@ -63,8 +63,8 @@ their normal speed.
 
 ## HUD
 
-- HUD opacity, size and tint
-- Crosshair color, size and opacity
+- Hide HUD, HUD opacity, size and tint
+- Hide crosshair, crosshair color, size and opacity
 - Hitmarker color and size
 - Input overlay colors
 - Colors for the velocity readout, jump counter, points, health bar, dash / stomp bars, level
