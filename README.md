@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" width="240" alt="">
+</p>
+
 # CICADAMATA QOL
 
 Quality-of-life mod for CICADAMATA" (full game): input fixes, HUD customization, and a ghost
