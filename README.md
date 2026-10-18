@@ -14,13 +14,26 @@ Latest release: https://github.com/ocucor/CASCADE/releases/latest
 
 ## Install
 
+1. Download `CASCADE-vX.Y.zip` from the
+   [latest release](https://github.com/ocucor/CASCADE/releases/latest). It already contains
+   the GDPatch loader.
+2. Extract it into the game folder (the one with `CICADAMATA.exe`; on Steam: right-click the
+   game > Manage > Browse local files) and allow it to merge folders.
+3. Start the game. `Options > MODS` lists QOL.
+
+To update, extract the new zip over the old files. Settings and ghosts are kept.
+
+Uninstall: delete `GDPatch\mods\qol`, or create an empty file named `gdpatch_disabled` in it.
+
+### Manual install
+
+If you already use GDPatch, download `CASCADE-vX.Y-mod-only.zip` instead, or:
+
 1. Install GDPatch (https://github.com/GDPatch/GDPatch): put `gdpatch_loader.dll` next to
    `CICADAMATA.exe` and rename it to <code title="Windows looks for a game's DLLs in the game's own folder before System32. The game imports winmm.dll at startup, so the loader takes that name, gets loaded in its place and forwards the real winmm calls.">winmm.dll</code>.
 2. Copy the `qol` folder into the game's `GDPatch\mods\` folder, so you end up with
    `CICADAMATA\GDPatch\mods\qol\gdpatch_mod.toml`.
 3. Start the game. `Options > MODS` lists QOL.
-
-Uninstall: delete `GDPatch\mods\qol`, or create an empty file named `gdpatch_disabled` in it.
 
 ## Settings
 
