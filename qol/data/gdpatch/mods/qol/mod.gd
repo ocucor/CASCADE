@@ -683,7 +683,7 @@ Images are scaled to the game's portrait size (the template's size) if they diff
 To make your own: copy "%s", rename the copy, and edit its images.
 "%s" and "%s" are re-created if deleted.
 Press RELOAD PORTRAITS in the menu after changing files.
- % [TEMPLATE_PACK, TEMPLATE_PACK, EXAMPLE_PACK])
+""" % [TEMPLATE_PACK, TEMPLATE_PACK, EXAMPLE_PACK])
 	var sources = {"default": "portrait_default_0", "damage": "portrait_damage_0", "zoned": "portrait_zoned_0", "starstruck": "portrait_starstruck_0"}
 	for pack in [TEMPLATE_PACK, EXAMPLE_PACK]:
 		var dir = PORTRAIT_DIR + pack + "/"
